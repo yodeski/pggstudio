@@ -1,0 +1,36 @@
+<% layout('layout') -%>
+<div id="loginform" class="modal hide slide">
+  <form class="form-horizontal" action="/login" method="post">
+    <div class="modal-header" style="line-height:18px;">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      <h4><span class="f16">   Login   </span></h4>
+    </div>
+    <br/>
+    <div class="control-group">
+      <div class="controls">
+        <div class="input-prepend">
+          <i class="add-on icon-envelope"></i><input type="text" id="inputUsername" name='inputUsername' placeholder="Email">
+        </div>
+      </div>
+    </div>
+    <div class="control-group">
+      <div class="controls">
+        <div class="input-prepend">
+          <i class="add-on icon-key"></i><input type="password" id="inputPassword" name="inputPassword" placeholder="Password">
+        </div>
+      </div>
+    </div>
+    <div class="control-group">
+      <div class="controls">
+        <label class="checkbox">
+          <input type="checkbox"> Remember me
+        </label>
+      </div><br/>
+      <div class="controls pull-left">
+        <button type="button" class="btn btn-info"><i class="icon-user"></i> Register</button>&nbsp;
+        <button id="btnLogin" type="submit" class="btn btn-info"><i class="icon-signin"></i> Sign in</button>
+      </div>
+    </div>
+    <br/>
+  </form>
+</div>
