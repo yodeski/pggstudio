@@ -1,32 +1,24 @@
-var AppRouter = Backbone.Router.extend({
-
-    routes: {
-        ""                  : "getMenu",
-        "menu/:id"         : "PopOver",
-        "about"             : "about"
-    },
-
-    initialize: function () {
-
-    },
-
-	getMenu: function(page) {
-        var p = page ? parseInt(page, 10) : 1;
-        var menuList = new LeftMenuCollection();
-        menuList.fetch({success: function(){
-            $("#divLeftMenu").html(new LeftMenuListView({ model: menuList }).el);
-        }});
-
-    },
-
-    PopOver: function (id) {
-        var menu = new LeftMenu({id: id});
-    },
-
+require.config({
+    paths: {
+        jQuery: 'libs/jquery/jquery',
+        Underscore: 'libs/underscore/underscore',
+        Backbone: 'libs/backbone/backbone'
+    }
 
 });
 
-utils.loadTemplate(['getTemplate'], function() {
-    app = new AppRouter();
-    Backbone.history.start();
+require([
+
+    // Load our app module and pass it to our definition function
+    'app',
+
+    // Some plugins have to be loaded in order due to there non AMD compliance
+    // Because these scripts are not "modules" they do not pass any values to the definition function below
+    'order!libs/jquery/jquery-min',
+    'order!libs/underscore/underscore-min',
+    'order!libs/backbone/backbone-min'
+], function(App){
+    // The "app" dependency is passed in as "App"
+    // Again, the other dependencies passed in are not "AMD" therefore don't pass a parameter to this function
+    App.initialize();
 });
