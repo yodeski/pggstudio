@@ -1,5 +1,5 @@
 <div id="divMytables" class="navbar-text" style="text-align:left;">
-    <form id="mainMenuForm" class="form-horizontal">	
+    <form id="mainMenuForm" class="form-horizontal" action="#">
 		<div class="accordion" id="accordionTables">  
 		  <div class="accordion-group">
 		    <div class="accordion-heading lnh20">
@@ -9,7 +9,7 @@
 		    </div>
 		    <div id="collapsePoints" class="accordion-body collapse">
 		      <div class="accordion-inner">
-		        <ul id="lstPoints" class="nav nav-list">
+		        <ul id="lstPoints" class="nav nav-list scrollbar fff">
 			    <% sources.forEach(function(pts){ %>
 			    	<% if(pts.Fieldtype === "point") { %>
 			      		<li><%= pts.Tablename %></li>
@@ -28,7 +28,7 @@
 		    </div>
 		    <div id="collapseLines" class="accordion-body collapse">
 		      <div class="accordion-inner">
-		        <ul id="lstLines" class="nav nav-list">
+		        <ul id="lstLines" class="nav nav-list scrollbar fff">
 			    <% sources.forEach(function(lns){ %>
 			    	<% if(lns.Fieldtype === "line") { %>
 			      		<li><%= lns.Tablename %></li>
@@ -47,7 +47,7 @@
 		    </div>
 		    <div id="collapsePolys" class="accordion-body collapse">
 		      <div class="accordion-inner">
-		        <ul id="lstPolygons" class="nav nav-list">
+		        <ul id="lstPolygons" class="nav nav-list scrollbar fff">
 			    <% sources.forEach(function(plg){ %>
 			    	<% if(plg.Fieldtype === "polygon") { %>
 			      		<li><%= plg.Tablename %></li>

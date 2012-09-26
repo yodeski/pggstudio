@@ -19,8 +19,8 @@ module.exports = {
     /** Current node environment. */
     env: (process.env.NODE_ENV || 'development'),
     /** Port to use. */
-    port: process.env.PORT, //DEBUG ? 8086 : process.env.PORT || 3131,
-    host: process.env.IP, 
+    port: process.env.PORT || 3131,
+    host: 'localhost', // || process.env.IP,
     enableSMTP: true, /** Your SMTP information. You can use gmail or your own server. */
     SMTP: {
         host: "smtp.gmail.com",

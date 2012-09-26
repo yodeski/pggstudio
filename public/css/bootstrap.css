@@ -5503,8 +5503,8 @@ body { width:100%; height:100%; margin:0 auto; background:#fff;}
 .lnh30 {line-height: 30px !important;}
 
 .scrolled {overflow: scroll;}
-.scroll-pane
+.scrollbar
 {
-	max-height: 400px;
-	overflow: auto;
+	max-height: 350px;
+    overflow:hidden;
 }

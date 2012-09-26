@@ -5,7 +5,7 @@ window.App = Ember.Application.create({
     
     // When everything is loaded.
     ready: function () {
-        $('.scroll-pane').jScrollPane();
+        $('.scrollbar').scrollbar();
         App.leftMenu.getItems();
         this.adjustMainContent();
         $("[rel=tooltip]").tooltip();
@@ -70,6 +70,7 @@ App.leftMenu = Em.ArrayController.create({
     initPopOver: function(elem, item) {
         var self = this;
         $.get(item.ref, function(d) {
+            $(d).find('.scrollbar').scrollbar();
             elem.clickover({
                 tip_id: item.itemname,
                 html: true,
@@ -82,6 +83,7 @@ App.leftMenu = Em.ArrayController.create({
                 onShown: function() { self.setToolsToPopOver(item, elem) },
                 onHide: function() { $('ul#leftMenu li').removeClass('active') }
             });
+            $('.scrollbar').scrollbar();
         });
         elem.live('click', function(e) {
             $(this).clickover('show');
@@ -89,17 +91,18 @@ App.leftMenu = Em.ArrayController.create({
         });
     },
     setToolsToPopOver: function(item, elem){
+        $('.scrollbar').scrollbar();
         var self = this;
         $('ul#leftMenu li').removeClass('active');
         elem.addClass('active');
         var popheader = $("#" + item.itemname).find("h3");
         var toolbtn;
         if(item.toolbar.length > 0) {
-            toolbtn = $('<div class="pull-right"><a href="#" class="text-shadow nolink" data-toggle="modal" data-target="#loginform" rel="tooltip" role="button" data-placement="top" title="' + item.toolbar[0].tip + '"><i class="' + item.toolbar[0].toolicon + ' "></i></a></div>');
+            toolbtn = $('<div class="pull-right"><a href="#" class="text-shadow nolink" data-toggle="modal" data-target="#loginform" rel="tooltip" role="button" data-placement="right" title="' + item.toolbar[0].tip + '"><i class="' + item.toolbar[0].toolicon + ' "></i></a></div>');
             toolbtn.find('a[rel=tooltip]').tooltip();
-        }   
+        }
         popheader.append(toolbtn);
-        $('.scroll-pane').jScrollPane();
+
     },
     bindItemClick: function(item) {
         var url = item.ref;
