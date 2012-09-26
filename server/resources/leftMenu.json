@@ -7,7 +7,7 @@
       "ref": "/dashboard",
       "color": "#000",
       "icon": "icon-dashboard",
-      "source": "submit",
+      "inControl": "",
       "toolbar": []
     },
     {
@@ -18,7 +18,7 @@
       "color": "#000",
       "hovercolor": "#b200ff",
       "icon": "icon-table",
-      "source": "popover",
+      "inControl": "popover",
       "toolbar": [
           {
             "toolicon":"icon-upload-alt",
@@ -35,7 +35,7 @@
       "color": "#000",
       "hovercolor": "#b200ff",
       "icon": "icon-hdd",
-      "source": "popover",
+      "inControl": "popover",
       "toolbar": [
           {
             "toolicon":"icon-magic",
@@ -52,7 +52,7 @@
       "color": "#000",
       "hovercolor": "#ff6a00",
       "icon": "icon-bolt",
-      "source": "popover",
+      "inControl": "popover",
       "toolbar": [
           {
             "toolicon":"icon-bolt",
@@ -69,7 +69,7 @@
       "color": "#000",
       "hovercolor": "#ff6a00",
       "icon": "icon-share",
-      "source": "submit",
+      "inControl": "",
       "toolbar": []
     },
     {
@@ -80,7 +80,7 @@
       "color": "#000",
       "hovercolor": "#05c21d",
       "icon": "icon-cogs",
-      "source": "submit",
+      "inControl": "",
       "toolbar": []
     },
     {
@@ -91,7 +91,7 @@
       "color": "#000",
       "hovercolor": "#ff006e",
       "icon": "icon-user",
-      "source": "submit",
+      "inControl": "",
       "toolbar": []
     },
     {
@@ -102,7 +102,7 @@
       "color": "#000",
       "hovercolor": "#ff006e",
       "icon": "icon-tags",
-      "source": "submit",
+      "inControl": "",
       "toolbar": []
     }
   ]

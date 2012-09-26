@@ -50,8 +50,8 @@ App.leftMenu = Em.ArrayController.create({
         // If we don't already have an object with this id, add it.
         if (typeof this._idCache[id] === "undefined") {
             this.pushObject(item);
-            var relpop = (item.source=='popover') ? '' : 'popover';
-            var href = (item.source=='popover') ? '#' : item.ref;
+            var relpop = (item.inControl=='popover') ? '' : 'popover';
+            var href = (item.inControl=='popover') ? '#' : item.ref;
             var $_li = $('<li id="itm_' + item.itemname + '" class="pointer" style="line-height:30px; color:' + item.color + '"><a rel="' + relpop + '" href="' + href + '" class="text-shadow" style="color:' + item.color + '"><i class="' + item.icon + ' icon-large text-shadow"></i>  <small style="font-size:12px;">' + item.text + '</small></a></li>');
             
             this._idCache[id] = item.id;

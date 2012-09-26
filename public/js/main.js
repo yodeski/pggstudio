@@ -2,7 +2,8 @@ require.config({
     paths: {
         jQuery: 'libs/jquery/jquery',
         Underscore: 'libs/underscore/underscore',
-        Backbone: 'libs/backbone/backbone'
+        Backbone: 'libs/backbone/backbone',
+        templates: '../templates'
     }
 
 });
@@ -10,15 +11,14 @@ require.config({
 require([
 
     // Load our app module and pass it to our definition function
-    'app',
-
+    'application',
     // Some plugins have to be loaded in order due to there non AMD compliance
     // Because these scripts are not "modules" they do not pass any values to the definition function below
     'order!libs/jquery/jquery-min',
     'order!libs/underscore/underscore-min',
     'order!libs/backbone/backbone-min'
-], function(App){
+], function(Application){
     // The "app" dependency is passed in as "App"
     // Again, the other dependencies passed in are not "AMD" therefore don't pass a parameter to this function
-    App.initialize();
+    Application.initialize();
 });

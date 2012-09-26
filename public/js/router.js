@@ -3,9 +3,10 @@ define([
     'jQuery',
     'Underscore',
     'Backbone',
+    'views/leftMenuView',
     'views/dashboardView',
     'views/usersView'
-], function($, _, Backbone, Session, leftMenu){
+], function($, _, Backbone, Session, leftMenuView, dashboardView, usersView){
     var AppRouter = Backbone.Router.extend({
         routes: {
             // Define some URL routes
