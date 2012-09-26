@@ -1,0 +1,7 @@
+<div class="navbar-text" style="text-align:left;">
+    <ul id="leftMenu" class="nav nav-list">
+        <% _.each(leftMenu, function(menu){ %>
+            <li id="<%= _menu.get('itemname') %>" class="pointer" style="line-height:30px; color:<%= _menu.get('color')"><a rel="<%=_menu.get('inControl') %>" href="<%=_menu.get('href') %>" class="text-shadow" style="<%=_menu.get('item.color') %>"><i class="<%=_menu.get('item.icon') %> icon-large text-shadow"></i>  <small style="font-size:12px;"><%=_menu.get('item.text')</small></a></li>
+        <% }); %>    
+    </ul>
+</div>
